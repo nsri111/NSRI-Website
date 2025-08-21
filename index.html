@@ -1,228 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NSRI - Noble Shivapuri Research Institute</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333333;
-      margin: 20px;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #800000;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-bottom: 20px;
-    }
-
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    nav {
-      background-color: #5a0000;
-      padding: 10px 0;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Motto banner */
-    .motto-banner {
-      background-color: #800000;
-      color: white;
-      text-align: center;
-      padding: 15px 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-
-    /* Hero image */
-    .hero {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    }
-
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Container for sections */
-    .container {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-    }
-
-    /* Paragraph with background */
-    .highlighted-paragraph {
-      background-color: #f4e7e7;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      color: #4a2c2c;
-      text-align: left;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      color: #800000;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      font-size: 17px;
-      color: #4a2c2c;
-    }
-
-    /* Contact section */
-    .contact-info p {
-      font-size: 17px;
-      margin: 8px 0;
-    }
-
-    .contact-info a {
-      color: #800000;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: #800000;
-      color: white;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
-      font-size: 15px;
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 600px) {
-      body {
-        margin: 10px;
-        font-size: 16px;
-      }
-
-      nav a {
-        margin: 0 8px;
-        font-size: 14px;
-      }
-
-      .highlighted-paragraph {
-        font-size: 16px;
-        padding: 15px;
-      }
-
-      ul li {
-        font-size: 15px;
-      }
-
-      /* Full-width hero on mobile */
-      .hero {
-        margin: 0 -10px 30px;
-        border-radius: 0;
-      }
-
-      .hero img {
-        border-radius: 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NSRI - Noble Shivapuri Research Institute</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; color: #333; margin: 0; line-height: 1.6; }
+  header { background-color: #800000; color: white; text-align: center; padding: 20px 10px; }
+  header img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px; }
+  nav { background-color: #5a0000; padding: 10px 0; text-align: center; }
+  nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 16px; cursor: pointer; }
+  nav a:hover { text-decoration: underline; }
+  .motto-banner { background-color: #800000; color: white; text-align: center; padding: 15px 20px; font-size: 1.2em; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 20px; border-radius: 4px; }
+  .hero img { width: 100%; height: auto; display: block; }
+  .container { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; }
+  h2 { color: #800000; margin-bottom: 15px; }
+  .highlighted-paragraph { background-color: #f4e7e7; padding: 20px; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #4a2c2c; text-align: left; font-size: 18px; margin-bottom: 30px; }
+  .objectives-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .objective-card { background: #fff; padding: 30px; border-radius: 12px; flex: 1 1 300px; max-width: 350px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; text-align: center; }
+  .objective-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+  .objective-card div.icon { font-size: 3em; margin-bottom: 15px; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 15px; color: white; background: linear-gradient(135deg, #ff6600, #ff9966); box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; }
+  .objective-card h3 { font-size: 1.3em; margin-bottom: 10px; color: #222; }
+  .objective-card p { color: #555; font-size: 0.95em; }
+  footer { background-color: #800000; color: white; padding: 40px 20px; }
+  .footer-container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+  .footer-about img { width: 80px; margin-bottom: 15px; }
+  .footer-about p { margin: 8px 0; font-size: 14px; }
+  .footer-column h3 { font-size: 16px; margin-bottom: 12px; border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px; }
+  .footer-column ul { list-style: none; padding: 0; margin: 0; }
+  .footer-column ul li { margin-bottom: 8px; }
+  .footer-column ul li a { color: white; text-decoration: none; font-size: 14px; }
+  .footer-column ul li a:hover { text-decoration: underline; }
+  .footer-social a { color: white; margin-right: 10px; font-size: 20px; text-decoration: none; }
+  .footer-social a:hover { color: #ff9966; }
+  .footer-bottom { text-align: center; margin-top: 30px; font-size: 14px; border-top: 1px solid #fff; padding-top: 15px; }
+  .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); }
+  .modal-content { background-color: #fff; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 800px; position: relative; max-height: 90vh; overflow-y: auto; }
+  .modal-content h2 { margin-top: 0; color: #800000; }
+  .close-btn { position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; color: #800000; cursor: pointer; }
+  .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
+  .contact-form button { background-color: #800000; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 5px; cursor: pointer; }
+  .contact-form button:hover { background-color: #5a0000; }
+  .social-links { display: flex; gap: 10px; font-size: 20px; margin-top: 10px; }
+  .social-links a { color: #800000; text-decoration: none; }
+  .social-links a:hover { color: #ff9966; }
+</style>
 </head>
 <body>
 
 <header>
   <img src="logo.jpg" alt="NSRI Logo" />
   <h1>Noble Shivapuri Research Institute (NSRI)</h1>
-  <p>Media and Communication for Social Impact</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#objectives">Objectives</a>
-  <a href="#contact">Contact</a>
+  <a id="getInvolvedLink">Get Involved</a>
+  <a id="impactLink">Impact</a>
+  <a id="aboutUsLink">About Us</a>
+  <a id="publicationsLink">Publications</a>
+  <a id="reportsLink">Reports</a>
+  <a id="mediaResourcesLink">Media & Resources</a>
+  <a id="contactLink">Contact</a>
 </nav>
 
 <div class="motto-banner">
-  Independent Research & Consulting Firm for Social Impact — Empowering Communities Beyond Borders
+  Advancing Society through Evidence
 </div>
 
 <div class="hero">
   <img src="banner.jpg" alt="Empowering Communities" />
 </div>
 
-<div class="container" id="about">
-  <h2>About NSRI</h2>
-  <div class="highlighted-paragraph">
-    Noble Shivapuri Research Institute (NSRI) is a center of innovation and knowledge dedicated to advancing research and collaboration for societal impact. With a diverse team and state-of-the-art facilities, NSRI aims to address pressing challenges through evidence-based solutions and transformative research. The institute provides consultancy services to support development priorities grounded in evidence, ensuring effective planning, implementation, and evaluation. Operating amidst a dynamic development landscape, NSRI promotes good governance, poverty reduction, and social stability through strong partnerships and dedicated service. Registered in Kathmandu, Nepal, NSRI offers expertise across sectors including health, education, environment, and social sciences, all aligned with the Sustainable Development Goals. Our multidisciplinary team collaborates closely with government bodies, NGOs, and international agencies to promote best practices and sustainable development.
+<!-- Who We Are Section -->
+<div class="container" id="whoWeAre">
+  <h2>Who We Are</h2>
+  <div class="highlighted-paragraph" id="whoWeAreBox" style="position: relative;">
+    <p id="whoWeAreText" style="display: block; overflow: hidden; max-height: 3em; line-height: 1.5em;">
+      Noble Shivapuri Research Institute (NSRI) is a dynamic center of knowledge and innovation, driving cutting-edge research and transformative solutions to address today’s most pressing challenges. With a team of visionary experts, advanced methodologies, and state-of-the-art facilities, NSRI fosters evidence-based, multidisciplinary research that informs policy, strengthens development programs, and delivers lasting impact on society.
+    </p>
+    
+    <div id="whoWeAreMore" style="display: none;">
+      <p>
+        NSRI provides independent consultancy services in health, education, empowerment, public health engineering, market research, and development. We believe that development priorities must be evidence-based, requiring impartial planning, evaluation, and guidance to ensure effective program implementation and measurable outcomes.
+      </p>
+      <p>
+        Operating in Nepal’s evolving development landscape—marked by decentralized governance, private-sector growth, and regional disparities—NSRI positions itself as an effective partner in promoting good governance, poverty reduction, social harmony, and political stability. Established on 5 February 2023 and registered in Kathmandu (Company Registration No: 306540/2079/80, PAN & VAT No: 610441307), NSRI works across 16 thematic areas aligned with the Sustainable Development Goals (SDGs). These include:
+      </p>
+      <ul>
+        <li>Health, education, and environmental research</li>
+        <li>Public health, social science, and market studies</li>
+        <li>Data verification, economics, and statistics</li>
+        <li>Legal advisory, policy, and governance support</li>
+        <li>Infrastructure quality testing and approval</li>
+        <li>Training, skill development, and livelihood promotion</li>
+        <li>Communication, advocacy, and non-profit engagement</li>
+      </ul>
+      <p>
+        NSRI collaborates with international donor agencies, government institutions at all levels, and community-based organizations to promote evidence-driven practices. Its platform brings together public health professionals, sociologists, scientists, policymakers, and development practitioners, combining expertise and commitment to advance knowledge and deliver meaningful social change.
+      </p>
+    </div>
+
+    <!-- Read More Button inside the same box -->
+    <button onclick="toggleWhoWeAre()" id="readMoreBtn" style="background: #800000; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; display: block; margin-top: 10px;">
+      Read More
+    </button>
   </div>
 </div>
 
-<div class="container" id="objectives">
-  <h2>Our Objectives</h2>
+<script>
+  function toggleWhoWeAre() {
+    const moreText = document.getElementById('whoWeAreMore');
+    const text = document.getElementById('whoWeAreText');
+    const btn = document.getElementById('readMoreBtn');
+
+    if (moreText.style.display === 'none') {
+      moreText.style.display = 'block';
+      text.style.maxHeight = 'none';
+      btn.textContent = 'Read Less';
+    } else {
+      moreText.style.display = 'none';
+      text.style.maxHeight = '3em'; // only 2 lines visible
+      btn.textContent = 'Read More';
+    }
+  }
+</script>
+
+
+
+
+
+  </div>
+</div>
+<!-- Vision Section -->
+<div class="container" id="vision">
+  <h2>Vision</h2>
+  <div class="highlighted-paragraph">
+    <p>To shape effective policies through evidence-based planning and implementation of result-oriented development interventions, fostered by collaboration with communities, development partners, and government institutions.</p>
+  </div>
+</div>
+
+<!-- Mission Section -->
+<div class="container" id="mission">
+  <h2>Mission</h2>
+  <div class="highlighted-paragraph">
+    <p>To advance evidence-based decision-making in health, education, environment, nutrition, and child and family welfare, with a focus on marginalized communities worldwide.</p>
+  </div>
+</div>
+
+<!-- Scope Section -->
+<div class="container" id="scope">
+  <h2>Scope</h2>
+  <div class="highlighted-paragraph" id="scopeBox" style="position: relative;">
+    <p id="scopeShort" style="display: block; overflow: hidden; max-height: 3em; line-height: 1.5em;">
+      NSRI operates nationwide, engaging in diverse sectors including health, environment, child development, education, nutrition, social sciences, and other development priorities aligned with the Sustainable Development Goals (SDGs).
+    </p>
+
+    <div id="scopeMore" style="display: none;">
+      <p>
+        The institute’s scope further extends to raising awareness on child protection and development through social media, videography, photography, and documentary production, with a focus on reaching both national and global Nepali communities. Additionally, NSRI is committed to promoting cultural awareness, fostering global citizenship, and advancing evidence-based practices that support early learning, social and emotional development, and holistic child well-being.
+      </p>
+    </div>
+
+    <!-- Read More Button inside the same box -->
+    <button onclick="toggleScope()" id="scopeReadMoreBtn" style="background: #800000; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; display: block; margin-top: 10px;">
+      Read More
+    </button>
+  </div>
+</div>
+
+<script>
+  function toggleScope() {
+    const moreText = document.getElementById('scopeMore');
+    const text = document.getElementById('scopeShort');
+    const btn = document.getElementById('scopeReadMoreBtn');
+
+    if (moreText.style.display === 'none') {
+      moreText.style.display = 'block';
+      text.style.maxHeight = 'none'; // expands all text
+      btn.textContent = 'Read Less';
+    } else {
+      moreText.style.display = 'none';
+      text.style.maxHeight = '3em'; // shows only 2 lines
+      btn.textContent = 'Read More';
+    }
+  }
+</script>
+
+
+
+<!-- Objectives Section -->
+<div class="container">
+  <h2>Our Work</h2>
+  <p style="text-align:center; font-weight:bold; color:#800000; margin-bottom:30px;">
+    🌍 All our activities support the UN Sustainable Development Goals (SDGs), promoting health, education, equality, and sustainable development.
+  </p>
+  <div class="objectives-grid">
+    <div class="objective-card"><div class="icon">🩺</div><h3>Health & Well-being</h3><p>Conduct public health research, training, workshops, conferences, and advocacy to improve community health and guide evidence-based policies.</p></div>
+    <div class="objective-card"><div class="icon">🎓</div><h3>Education & Skills</h3><p>Support formal and informal education, assist in establishing educational institutions, and deliver livelihood and skill development programs approved by government sectors.</p></div>
+    <div class="objective-card"><div class="icon">🎬</div><h3>Awareness & Behavior Change</h3><p>Design and produce videos, documentaries, cartoons, animations, and IEC/BCC materials to raise awareness and inspire positive behavior change.</p></div>
+    <div class="objective-card"><div class="icon">📊</div><h3>Research & Technical Solutions</h3><p>Conduct social science research and provide consultancy in physical and biological sciences, including government-approved soil testing and technical studies to support sustainable infrastructure and development projects.</p></div>
+    <div class="objective-card"><div class="icon">📈</div><h3>Data, Economic & Policy Insights</h3><p>Offer economic, statistical, and computer-based analysis, business and market guidance, and collaborate with international partners like UNDP, ILO, and the UN for data verification and development initiatives.</p></div>
+    <div class="objective-card"><div class="icon">⚖️</div><h3>Social Justice & Community Welfare</h3><p>Implement non-profit activities, advocacy campaigns, charity programs, and legal advisory services to promote equality, justice, and inclusive community development.</p></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <img src="logo.jpg" alt="NSRI Logo">
+      <p><strong>Noble Shivapuri Research Institute (NSRI)</strong></p>
+      <p>Budhanilkantha-04, Kathmandu, Nepal</p>
+      <p>📞 +977 9851181321 / 9841856053</p>
+      <p>📧 <a href="mailto:nobleshivapuri111@gmail.com" style="color:white;">nobleshivapuri111@gmail.com</a></p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100090162722972" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@NSRI111" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/NobleShivapuri" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/noble-shivapuri-research-institute/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-column"><h3>Get Involved</h3><ul><li><a href="#">Join Our Team</a></li><li><a href="#">Volunteer</a></li><li><a href="#">Donate</a></li></ul></div>
+<!-- Footer Column -->
+<div class="footer-column">
+  <h3>Impact</h3>
   <ul>
-    <li>Provide special technical tests focused on soil quality, purity, and strength to support infrastructure building activities with government approval.</li>
-    <li>Conduct research activities in social sciences including law, sociology, economics, population, environment, conflict and peace, gender studies, public health, agriculture, water and sanitation.</li>
-    <li>Offer consultation services in business and market sectors to foster evidence-based development.</li>
-    <li>Design and produce multimedia materials such as videos, documentaries, cartoons, and IEC/BCC materials to support behavior change communication.</li>
-    <li>Collaborate with international donors like UNDP, ILO, and UN for consultation and data verification activities.</li>
-    <li>Engage in economic, statistical, and computer-based data analysis to support development planning and evaluation.</li>
-    <li>Implement non-profit and social activities including charity, advocacy, and legal advisory services.</li>
-    <li>Promote formal and informal education and support establishment of educational institutions with government approval.</li>
-    <li>Conduct public health research, training, workshops, conferences, and advocacy for policy development.</li>
-    <li>Provide consultancy in physical and biological sciences with expert collaboration.</li>
-    <li>Deliver livelihood training and skill development programs approved by government sectors to empower communities.</li>
+    <li><a href="#" id="impactHealth">Health</a></li>
+    <li><a href="#" id="impactEducation">Education</a></li>
+    <li><a href="#" id="impactLivelihood">Livelihood</a></li>
+    <li><a href="#" id="impactEmergency">Emergency</a></li>
   </ul>
 </div>
 
-<div class="container contact-info" id="contact">
-  <h2>Contact Us</h2>
-  <p><strong>📍 Address:</strong> Budhanilkantha-04, Kathmandu, Bagmati Province, Nepal</p>
-  <p><strong>📞 Phone:</strong> +977 9851181321 / 9841856053</p>
-  <p><strong>📧 Email:</strong> <a href="mailto:nobleshivapuri111@gmail.com">nobleshivapuri111@gmail.com</a></p>
-  <p><strong>🌐 Follow us on:</strong> <a href="https://www.facebook.com/share/12L8v9dAXP3/" target="_blank">Facebook</a></p>
+<!-- Modals -->
+<div id="healthModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Health</h2>
+    <p>NSRI advances community health through research, training, and advocacy, focusing on maternal and child health, nutrition, reproductive and mental health, WASH, and health system strengthening.</p>
+  </div>
 </div>
 
-<footer>
-  &copy; 2025 Noble Shivapuri Research Institute (NSRI) | All Rights Reserved
+<div id="educationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Education</h2>
+    <p>NSRI supports inclusive formal and informal education and strengthens educational institutions.</p>
+  </div>
+</div>
+
+<div id="livelihoodModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Livelihood</h2>
+    <p>NSRI strengthens community livelihoods through sustainable income generation, skill development, market access, and resilience building.</p>
+  </div>
+</div>
+
+<div id="emergencyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Emergency</h2>
+    <p>NSRI responds swiftly in times of crisis, delivering essential relief through local networks and partners to reach communities most in need.</p>
+  </div>
+</div>
+    
+    <div class="footer-column"><h3>About Us</h3><ul><li><a href="#">Our History</a></li><li><a href="#">Leadership</a></li><li><a href="#" id="footerReportsLink">Reports</a></li><li><a href="#" id="footerContactLink">Contact</a></li></ul></div>
+
+    <div class="footer-column"><h3>Media & Resources</h3><ul><li><a href="#">News</a></li><li><a href="#">Gallery</a></li><li><a href="#">Videos</a></li><li><a href="#" id="footerPublicationsLink">Publications</a></li></ul></div>
+
+  </div>
+  <div class="footer-bottom">&copy; 2025 Noble Shivapuri Research Institute (NSRI) | All Rights Reserved</div>
 </footer>
 
+<!-- Modals -->
+<!-- Get Involved Modal -->
+<div id="getInvolvedModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Get Involved</h2>
+    <p>Be part of our mission! Whether you are a researcher, volunteer, donor, or partner, there are many ways to contribute to NSRI’s initiatives and make a real impact in society. We are seeking an experienced, motivated, young, and professional human resources professional to get involved in our work. The vacancies are posted here. However, we encourage you to drop your interest by outlining your qualifications. Please feel free to contact us at  <a href="mailto:hr@nsri.com.np" style="text-decoration: none; color: blue;">hr@nsri.com.np</a>
+</p>
+    <p>Every year, we hire a limited number of interns to work on research, media mobilization, and capacity development. We encourage you to visit our get involved page frequently.</p>
+  </div>
+</div>
+
+<!-- Impact Modal -->
+<div id="impactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Impact</h2>
+    <p>We work on various components of health, media, economic development, videography, photography, documentation, endline and baseline studies, and social science research. We have identified 16 components. Some of our works have been listed in our objectives section. Please visit our objectives for details.</p>
+  </div>
+</div>
+
+<!-- About Us Modal -->
+<div id="aboutUsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Leadership</h2>
+    <h3>Rita Adhikari</h3>
+    <p>Ms. Adhikari founded the organization in 2022 in Nepal, and it is officially registered with the Office of the Company Registrar, Kathmandu. She is a seasoned professional in communication and social mobilization, having worked with several prominent organizations including UNICEF, Nepal Fertility Care Center, WaterAid, Lifeline Nepal, FHI, Abt Associates, Blue Diamond Society, the Country Coordinating Mechanism, and ADRA Nepal. Currently, she serves as the Chief Executive Officer (CEO) of Noble Shivapuri Research Institute Pvt. Ltd. Ms. Adhikari holds a Master’s degree from the University of Tokyo and a Bachelor’s degree from Purbanchal University, Nepal. Her expertise spans mixed-method research, big data research, Social and Behavior Change Communication, Human-Centered Design, and community mobilization. With her leadership and technical skills, she brings innovation and strategic vision to the institute’s research and development initiatives.</p>
+    <h3>Kanchan Thapa</h3>
+    <p>Mr. Thapa serves as the Research Uptake Manager at the Noble Shivapuri Research Institute. He holds a Master of Public Health in Epidemiology from Bangladesh and an MPhil in Population Studies from Tribhuvan University, Nepal. Over the course of his career, he has contributed to renowned organizations such as UNICEF, the Ministry of Health and Population, Lifeline Nepal, the Nepal Academy of Science and Technology (NAST), Hope International College–Purbanchal University, the Social Development and Promotion Center (SDPC), and Tokyo Global Gateway. With more than 13 years of professional expertise, Mr. Thapa has established himself as a versatile public health professional specializing in research, Social and Behavior Change Communication, and capacity building through training of trainers.</p>
+    <h2>Our Team</h2>
+    <p>Our team consists of a diverse group of dedicated full-time and part-time staff members who bring expertise from various fields. In addition, we engage consultants on a periodic basis to ensure high-quality and specialized support for our projects. Guided by a well-structured organogram, our organization operates with clarity, collaboration, and efficiency to deliver impactful results.</p>
+  </div>
+</div>
+
+<!-- Publications Modal -->
+<div id="publicationsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Publications</h2>
+    <ul>
+      <li><a href="https://www.frontiersin.org/journals/health-services/articles/10.3389/frhs.2024.1321020/full" target="_blank">Health care service utilization among elderly in rural setting of Gandaki province, Nepal: a mixed method study</a></li>
+      <li><a href="https://www.nepjol.info/index.php/ajps/article/view/61832" target="_blank">Trends, Causes, Morbidity, and Mortality Analysis of Road Traffic Accidents in Karnali Province, Nepal: A Three-Year Retrospective Study</a></li>
+      <li><a href="https://elibrary.nhrc.gov.np/bitstream/20.500.14356/2295/1/4236-Manuscript-32166-1-10-20230720.pdf" target="_blank">Factors Associated with Utilization of Postnatal Care Services</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Reports Modal -->
+<div id="reportsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Past Projects / Research</h2>
+    <ul>
+      <li>Exploring situation of post-natal care in Karnali Province and its enabling and hindering factors – Karnali Province Government, MoSD, Birendranagar-4, Surkhet</li>
+      <li>Health Profile of Raji (Indigenous Minorities) of Surkhet District – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Factors affecting the uptake of childhood immunization program: a qualitative study among caregivers and health workers of western Nepal – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Factors for Continuation of Health Insurance Program among Households in Mid-Western Region of Nepal: Findings from a Mixed Method Study – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Integrating Retaliation Service in Primary Health Care: Challenges and opportunities in Karnali Province – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Report writing of “Integrating Retaliation Service in Primary Health Care: Challenges and opportunities” – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Rehabilitation strategy evaluation review report – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+      <li>Reaching to unreached strategy evaluation report – Karnali Province Government, MoSD, Public Health Service Office, Birendranagar-4, Surkhet</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Media & Resources Modal -->
+<div id="mediaResourcesModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Media & Resources</h2>
+    <p>Explore NSRI’s research reports, publications, training resources, and data insights. A library of knowledge designed to support academics, policymakers, and communities. Please follow our works on YouTube, Facebook, LinkedIn, and X profile.</p>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@NSRI111" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100090162722972" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/NobleShivapuri" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/company/noble-shivapuri-research-institute/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Contact</h2>
+    <p>Address: Budhanilkantha-04, Kathmandu, Nepal</p>
+    <p>Phone: +977 9851181321 / 9841856053</p>
+    <p>Email: <a href="mailto:nobleshivapuri111@gmail.com">nobleshivapuri111@gmail.com</a></p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modals = {
+    getInvolvedLink: 'getInvolvedModal',
+    impactLink: 'impactModal',
+    aboutUsLink: 'aboutUsModal',
+    publicationsLink: 'publicationsModal',
+    reportsLink: 'reportsModal',
+    mediaResourcesLink: 'mediaResourcesModal',
+    contactLink: 'contactModal'
+  };
+
+  Object.keys(modals).forEach(linkId => {
+    const link = document.getElementById(linkId);
+    const modal = document.getElementById(modals[linkId]);
+    const closeBtn = modal.querySelector('.close-btn');
+    link.addEventListener('click', () => { modal.style.display = 'block'; });
+    closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+  });
+
+  window.addEventListener('click', (e) => {
+    Object.values(modals).forEach(modalId => {
+      const modal = document.getElementById(modalId);
+      if (e.target === modal) { modal.style.display = 'none'; }
+    });
+  });
+</script>
+<script>
+  // Footer links modal functionality
+  const footerReportsLink = document.getElementById('footerReportsLink');
+  const footerContactLink = document.getElementById('footerContactLink');
+  const footerPublicationsLink = document.getElementById('footerPublicationsLink'); // NEW
+
+  const reportsModal = document.getElementById('reportsModal');
+  const contactModal = document.getElementById('contactModal');
+  const publicationsModal = document.getElementById('publicationsModal'); // NEW
+
+  const closeBtns = document.querySelectorAll('.close-btn');
+
+  // Open modals
+  footerReportsLink.addEventListener('click', () => { reportsModal.style.display = 'block'; });
+  footerContactLink.addEventListener('click', () => { contactModal.style.display = 'block'; });
+  footerPublicationsLink.addEventListener('click', () => { publicationsModal.style.display = 'block'; }); // NEW
+
+  // Close modals
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.parentElement.style.display = 'none';
+    });
+  });
+
+  // Close modal if clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === reportsModal) reportsModal.style.display = 'none';
+    if (e.target === contactModal) contactModal.style.display = 'none';
+    if (e.target === publicationsModal) publicationsModal.style.display = 'none'; // NEW
+  });
+</script>
+<script>
+window.onload = function() {
+  const impactModals = {
+    impactHealth: 'healthModal',
+    impactEducation: 'educationModal',
+    impactLivelihood: 'livelihoodModal',
+    impactEmergency: 'emergencyModal'
+  };
+
+  Object.keys(impactModals).forEach(linkId => {
+    const link = document.getElementById(linkId);
+    const modal = document.getElementById(impactModals[linkId]);
+    const closeBtn = modal.querySelector('.close-btn');
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+};
+</script>
+
+<!-- CSS for Modals -->
+<style>
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+</style>
+
+
+<!-- JavaScript for Modals -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const impactModals = {
+    impactHealth: 'healthModal',
+    impactEducation: 'educationModal',
+    impactLivelihood: 'livelihoodModal',
+    impactEmergency: 'emergencyModal'
+  };
+
+  Object.keys(impactModals).forEach(linkId => {
+    const link = document.getElementById(linkId);
+    const modal = document.getElementById(impactModals[linkId]);
+    const closeBtn = modal.querySelector('.close-btn');
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+});
+</script>
 </body>
 </html>
